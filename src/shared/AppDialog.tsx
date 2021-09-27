@@ -46,7 +46,7 @@ const DialogTitle = withStyles(styles)((props: DialogTitleProps) => {
   const { children, classes, onClose, ...other } = props
   return (
     <MuiDialogTitle disableTypography className={classes.root} {...other}>
-      <Typography variant='h5' className={classes.textWhite}>
+      <Typography variant='h5' component='span' className={classes.textWhite}>
         {children}
       </Typography>
       {onClose ? (
@@ -77,7 +77,9 @@ const AppDialog: React.FC<TAppDialog> = (props: PropsWithChildren<any>) => {
       aria-describedby='alert-dialog-slide-description'
     >
       <DialogTitle id='customized-dialog-title' onClose={props.handleClose}>
-        <Typography variant='h5'>{props.title}</Typography>
+        <Typography variant='h5' component='span'>
+          {props.title}
+        </Typography>
       </DialogTitle>
       <DialogContent>
         <DialogContent>{props.children}</DialogContent>

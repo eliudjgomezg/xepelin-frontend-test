@@ -19,19 +19,17 @@ const queryClient = new QueryClient({
 })
 
 ReactDOM.render(
-  <React.StrictMode>
-    <BrowserRouter>
-      <QueryClientProvider client={queryClient}>
-        <ThemeProvider theme={theme}>
-          <PostsContextProvider>
-            <SnackbarProvider maxSnack={3}>
-              <AppRouter />
-            </SnackbarProvider>
-          </PostsContextProvider>
-        </ThemeProvider>
-      </QueryClientProvider>
-    </BrowserRouter>
-  </React.StrictMode>,
+  <BrowserRouter>
+    <QueryClientProvider client={queryClient}>
+      <ThemeProvider theme={theme}>
+        <PostsContextProvider>
+          <SnackbarProvider maxSnack={3}>
+            <AppRouter />
+          </SnackbarProvider>
+        </PostsContextProvider>
+      </ThemeProvider>
+    </QueryClientProvider>
+  </BrowserRouter>,
   document.getElementById('root')
 )
 
